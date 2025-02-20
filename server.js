@@ -10,6 +10,9 @@ let exisitingUsers=[
     {username:" Sarah", email:"sarah@gmail.com", password:"sarah@1010", dob:"01-09-2002"}
 
 ]
+app.get('/',()=>{
+    <h1>Home</h1>
+})
 app.post('/signup', (req,res)=>{
     const {username, email , password, dob}= req.body;
     if(!username){
