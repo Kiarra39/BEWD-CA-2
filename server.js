@@ -11,7 +11,8 @@ let exisitingUsers=[
 
 ]
 app.get('/',()=>{
-    <h1>Home</h1>
+    
+
 })
 app.post('/signup', (req,res)=>{
     const {username, email , password, dob}= req.body;
@@ -27,7 +28,9 @@ app.post('/signup', (req,res)=>{
         return res.status(400).json({error:"Date of Birth cannot be empty "});
     }
     if(password.length>16 || password.length <8)
-        return res.status(401).json({error:"Passwword length should be greater than 8 and less than or equal to 16 "});
+        return res.status(401).json({error:"Password length should be greater than 8 and less than or equal to 16 "});
+
+    return res.status(200).json({message: "User created successfully", user: username})
 })
 
 app.get ('/user-info', (req,res)=>{
